@@ -21,13 +21,13 @@ $(document).on('ready', function() {
     var taxRate = parseFloat($( "input[name='meal-taxrate']" ).val());
     var tipRate = parseFloat($( "input[name='meal-tiprate']" ).val());
     this.charges.push(new CustomerCharge(price, taxRate, tipRate));
-  }
+  };
 
   Financials.prototype.clearInput = function() {
     $( "input[name='meal-price']" ).val('');
     $( "input[name='meal-taxrate']" ).val('');
     $( "input[name='meal-tiprate']" ).val('');
-  }
+  };
 
   Financials.prototype.updateDom = function() {
     var index = this.charges.length-1;
@@ -37,7 +37,10 @@ $(document).on('ready', function() {
     $('#total-tips').html(this.numFormat(this.totalTips()));
     $('#meal-count').html(this.charges.length);
     $('#average-tip').html(this.numFormat(this.averageTip()));
-  }
+  };
+
+
+
 
 
 });

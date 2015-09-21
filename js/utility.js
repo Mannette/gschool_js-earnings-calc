@@ -13,17 +13,28 @@ Financials.prototype.totalTips = function(){
     tipTotals += this.charges[i].tipAmount;
   }
   return tipTotals;
-}
+};
 
 Financials.prototype.averageTip = function() {
   return this.totalTips() / this.charges.length;
-}
+};
 
 Financials.prototype.numFormat = function(num) {
   return " $" + num.toFixed(2);
-}
+};
 
 module.exports = {
   CustomerCharge: CustomerCharge,
   Financials: Financials
+};
+
+// local storage
+function LocalStorage(name) {
+  this.name = name;
+  this.data = data;
 }
+
+LocalStorage.prototype.init = function() {
+  // create object in local storage
+  
+};
