@@ -32,16 +32,16 @@ myApp.controller('charges', ['$scope', function($scope) {
     $scope.averageTip = tipTotals / tipArr.length;
   };
 
-  $scope.clear = function() {
-    mealPrice.value = '';
-    mealTax.value = '';
-    mealTip.value = '';
-  };
+    $scope.clear = function() {
+      mealPrice.value = '';
+      mealTax.value = '';
+      mealTip.value = '';
+    };
 
-  $scope.reset = function() {
-    $scope.totalTips = '';
-    $scope.mealCount = '';
-    $scope.averageTip = '';
-  };
+    $scope.reset = function() {
+      $scope.totalTips = '';
+      $scope.mealCount = '';
+      $scope.averageTip = '';
+    };
 
 }]);
