@@ -1,19 +1,47 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller('charges', ['$scope', function($scope) {
+  var tips = [];
+  var meals = [];
+  var mealPrice = document.getElementById('mealPrice');
+  var mealTax = document.getElementById('mealTax');
+  var mealTip = document.getElementById('mealTip');
 
   $scope.totalCharges = function() {
 
-    var mealPrice = document.getElementById('mealPrice').value;
-    var mealTax = document.getElementById('mealTax').value;
-    var mealTip = document.getElementById('mealTip').value;
+    $scope.subtotal = mealPrice.value * (1 + mealTax.value);
 
-    $scope.subtotal = mealPrice * (1 + mealTax);
+    $scope.tip = mealPrice.value * mealTip.value;
 
-    $scope.tip = mealPrice * mealTip;
+    $scope.total = $scope.subtotal + $scope.tip;
 
-    $scope.total = subtotal + tip;
+    tips.push($scope.tip);
+    meals.push($scope.total);
 
+    $scope.totalEarnings(tips, meals);
+
+  };
+
+  $scope.totalEarnings = function(tipArr, mealArr) {
+    $scope.totalTips = tipArr.length;
+    $scope.mealCount = mealArr.length;
+    var tipTotals = 0;
+    for (var i = 0; i < tipArr.length; i++) {
+      tipTotals += tipArr[i];
+    }
+    $scope.averageTip = tipTotals / tipArr.length;
+  };
+
+  $scope.clear = function() {
+    mealPrice.value = '';
+    mealTax.value = '';
+    mealTip.value = '';
+  };
+
+  $scope.reset = function() {
+    $scope.totalTips = '';
+    $scope.mealCount = '';
+    $scope.averageTip = '';
   };
 
 }]);
