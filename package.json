@@ -1,0 +1,26 @@
+{
+  "name": "js-earnings-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mannette/gschool_js-earnings-calc.git"
+  },
+  "author": "Ethan Mannette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mannette/gschool_js-earnings-calc/issues"
+  },
+  "homepage": "https://github.com/Mannette/gschool_js-earnings-calc#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-server-livereload": "^1.5.3",
+    "jshint-stylish": "^2.0.1"
+  }
+}

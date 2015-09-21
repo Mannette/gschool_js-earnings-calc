@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('charges', ['$scope', function($scope) {
+myApp.controller('charges', function($scope, $filter) {
   var tips = [];
   var meals = [];
   var mealPrice = document.getElementById('mealPrice');
@@ -29,7 +29,8 @@ myApp.controller('charges', ['$scope', function($scope) {
     for (var i = 0; i < tipArr.length; i++) {
       tipTotals += tipArr[i];
     }
-    $scope.averageTip = tipTotals / tipArr.length;
+    var tip = tipTotals / tipArr.length;
+    $scope.averageTip = $filter('currency')(tip);
   };
 
     $scope.clear = function() {
@@ -44,4 +45,4 @@ myApp.controller('charges', ['$scope', function($scope) {
       $scope.averageTip = '';
     };
 
-}]);
+});
